@@ -58,6 +58,7 @@ jobs:
           - "2.6"
           - "2.7"
           - "3.0"
+          - "3.1"
       arch:
         type: enum
         enum:
@@ -131,6 +132,7 @@ jobs:
           - "2.6"
           - "2.7"
           - "3.0"
+          - "3.1"
     docker:
       - image: cimg/base:stable
         environment:
@@ -176,13 +178,13 @@ workflows:
           name: ruby-<< matrix.version >>-centos7-<< matrix.arch >>-build-and-test
           matrix:
             parameters:
-              version: ["2.6", "2.7", "3.0"]
+              version: ["2.6", "2.7", "3.0", "3.1"]
               arch: ["amd64", "arm64"]
       - deploy:
           name: ruby-<< matrix.version >>-deploy
           matrix:
             parameters:
-              version: ["2.6", "2.7", "3.0"]
+              version: ["2.6", "2.7", "3.0", "3.1"]
           requires:
             - ruby-<< matrix.version >>-centos7-amd64-build-and-test
             - ruby-<< matrix.version >>-centos7-arm64-build-and-test

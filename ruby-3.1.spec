@@ -1,5 +1,5 @@
 Name: ruby
-Version: 3.0.3
+Version: 3.1.0
 Release: 1%{?dist}
 License: Ruby License/GPL - see COPYING
 URL: http://www.ruby-lang.org/
@@ -10,7 +10,7 @@ BuildRequires: readline-devel ncurses-devel gdbm-devel glibc-devel gcc openssl-d
 Source0: https://cache.ruby-lang.org/pub/ruby/ruby-%{version}.tar.gz
 Summary: An interpreter of object-oriented scripting language
 Group: Development/Languages
-Provides: ruby(abi) = 3.0
+Provides: ruby(abi) = 3.1
 Provides: ruby-irb
 Provides: ruby-rdoc
 Provides: ruby-libs
@@ -66,6 +66,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/*
 
 %changelog
+
+* Wed Dec 29 2021 Tsubasa Takayama <tsubasa.takayama@socialplus.jp> - 3.1.0
+- Update ruby version to 3.1.0
 
 * Wed Nov 24 2021 feedforce tech team <technical_staff@feedforce.jp> - 3.0.3
 - Update ruby version to 3.0.3
